@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Polish National Parks</string>
     <string name="app_info">
-    This is Polish National Parks Android app\n
+    This is Polish National Parks Android app\n---\n
     made by: Dominik Krzemiński\n
     date:12-13.03.16\n
     It is simple application showing info about all 23 Polish National Parks. Information taken from
-        wikipedia.org. All pictures taken from wikipedia as well or free reusable license resources.
+        wikipedia.org. All pictures taken from wikipedia as well or open access resources.
         \n---\nInspired by Study Jam Android - GDG Warsaw.
     </string>
     <string name="park1"> Babiogorski NP </string>
