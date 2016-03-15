@@ -1,15 +1,19 @@
 package com.example.android.polishnationalparks;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ParkActivity extends AppCompatActivity {
 
+    String urlAddress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,12 @@ public class ParkActivity extends AppCompatActivity {
         parkInfo.setText(getString(resnameId));
         resnameId = this.getResources().getIdentifier("park"+buttonId+"_url", "string",  getPackageName());
         parkUrl.setText(getString(resnameId));
+        urlAddress = getString(resnameId);
+    }
 
+    public void onUrlClick(View view){
+        Uri uri = Uri.parse(urlAddress);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }

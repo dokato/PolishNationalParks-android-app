@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:textStyle="italic"
         android:textSize="16sp"
+        android:onClick="onUrlClick"
         android:text="url"/>
 
     <TextView
