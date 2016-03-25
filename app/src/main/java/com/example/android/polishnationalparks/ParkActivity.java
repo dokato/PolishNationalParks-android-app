@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class ParkActivity extends AppCompatActivity {
 
     String urlAddress;
+    String parkNationalName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,7 @@ public class ParkActivity extends AppCompatActivity {
         Log.v("BUTTON:", "park" + buttonId);
         int resnameId = this.getResources().getIdentifier("park"+buttonId, "string",  getPackageName());
         parkName.setText(getString(resnameId));
+        parkNationalName = getString(resnameId);
         resnameId = this.getResources().getIdentifier("park"+buttonId+"_info", "string",  getPackageName());
         parkInfo.setText(getString(resnameId));
         resnameId = this.getResources().getIdentifier("park"+buttonId+"_url", "string",  getPackageName());
@@ -49,9 +51,18 @@ public class ParkActivity extends AppCompatActivity {
         urlAddress = getString(resnameId);
     }
 
+    //Open url after clicking a link
     public void onUrlClick(View view){
         Uri uri = Uri.parse(urlAddress);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+
+    //Open map and search for park
+    public void onButtonMap(View view){
+        String parsedName = parkNationalName.replace(' ', '+');
+        Intent geoIntent = new Intent (Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + parsedName));
+        startActivity(geoIntent);
+    }
+
 }

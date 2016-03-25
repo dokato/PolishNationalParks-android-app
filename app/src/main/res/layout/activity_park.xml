@@ -48,5 +48,15 @@
         android:textSize="18sp"
         android:text="description"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Show on map"
+        android:textSize="20sp"
+        android:background="#4e8539"
+        android:padding="3dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onButtonMap" />
+
 </LinearLayout>
 </ScrollView>
